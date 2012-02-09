@@ -5,7 +5,8 @@ gem 'rails', '3.2.1'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+#gem 'sqlite3'
+gem 'pg'
 
 
 # Gems used only for assets and not required
@@ -22,6 +23,19 @@ end
 
 gem 'jquery-rails'
 
+gem 'haml'
+gem 'haml-rails', :group => :development
+gem 'simple_form'
+
+group :test do
+  gem 'database_cleaner'
+  gem 'rails3-generators' #mainly for factory_girl & simple_form at this point
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+  gem 'capybara'
+  #gem  'ZenTest', "~> 4.4.2"
+  #gem  'autotest-rails' # if you're using rails
+end
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
@@ -32,7 +46,13 @@ gem 'jquery-rails'
 # gem 'unicorn'
 
 # Deploy with Capistrano
-# gem 'capistrano'
+gem 'capistrano'
 
 # To use debugger
-# gem 'ruby-debug19', :require => 'ruby-debug'
+#gem 'ruby-debug'
+group :development do
+  gem 'linecache19', :git => 'git://github.com/mark-moseley/linecache'
+  gem 'ruby-debug-base19x', '~> 0.11.30.pre4'
+  gem 'ruby-debug19'
+  gem 'guard-rspec'
+end
