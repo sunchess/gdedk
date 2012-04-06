@@ -1,0 +1,13 @@
+= simple_form_for @city do |form|
+
+  -if @city.errors.any?
+    #errorExplanation
+      %h2= "#{pluralize(@city.errors.count, "error")} prohibited this #{City.name.titleize} from being saved:"
+      %ul
+        - @city.errors.full_messages.each do |msg|
+          %li= msg  
+
+  = form.input :name, :label => 'Name'
+
+  .actions
+    = form.button :submit
