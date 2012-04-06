@@ -8,6 +8,11 @@ gem 'rails', '3.2.1'
 #gem 'sqlite3'
 gem 'pg'
 
+#authlogic
+gem 'authlogic'
+gem 'cancan'
+gem 'inherited_resources'
+
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -19,6 +24,7 @@ group :assets do
   # gem 'therubyracer'
 
   gem 'uglifier', '>= 1.0.3'
+  gem 'twitter-bootstrap-rails', :git => "git://github.com/seyhunak/twitter-bootstrap-rails.git", :branch => "static"
 end
 
 gem 'jquery-rails'
@@ -26,6 +32,20 @@ gem 'jquery-rails'
 gem 'haml'
 gem 'haml-rails', :group => :development
 gem 'simple_form'
+
+case RbConfig::CONFIG['host_os']
+when /darwin/i
+  gem 'rb-fsevent'
+  gem 'growl'
+when /linux/i
+  gem 'libnotify', ">= 0.7.2"
+  gem 'rb-inotify', ">= 0.8.8"
+when /mswin|windows/i
+  gem 'rb-fchange'
+  gem 'win32console'
+  gem 'rb-notifu'
+end
+
 
 group :test do
   gem 'database_cleaner'
@@ -54,5 +74,12 @@ group :development do
   gem 'linecache19', :git => 'git://github.com/mark-moseley/linecache'
   gem 'ruby-debug-base19x', '~> 0.11.30.pre4'
   gem 'ruby-debug19'
-  gem 'guard-rspec'
 end
+
+
+gem "guard", "~> 1.0.0"
+gem "guard-bundler", ">= 0.1.3"
+gem "guard-rails", ">= 0.1.0"
+gem "guard-livereload", ">= 0.4.0"
+gem "guard-rspec", ">= 0.6.0"
+
