@@ -1,0 +1,9 @@
+ru:
+  user_sessions:
+    new:
+      title: "Вход пользователей"
+      login_or_email: "Логин или email"
+      password: "Пароль"
+      remember: "Запомнить меня"
+      login: "Войти"
+

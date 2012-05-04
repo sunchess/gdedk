@@ -26,15 +26,16 @@
           %a.brand{:href => "#"}Gdedk
           .container.nav-collapse
             %ul.nav
-              %li= link_to "Link 1", "/path1"
-              %li= link_to "Link 2", "/path2"
-              %li= link_to "Link 3", "/path3"
+              %li= link_to t("add_product"), "/path1"
+              %li{class: current_page?(new_user_session_path) ? "active" : nil}= link_to t("sing_in"), new_user_session_path
+              %li= link_to t("register"), "/path3"
 
     .container
 
       .content
         .row
           .span9
+            = render :partial => "shared/flashes"
             = yield
           .span3
             .well.sidebar-nav
