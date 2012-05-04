@@ -4,7 +4,7 @@ class CreatePurchases < ActiveRecord::Migration
       t.integer :user_id
       t.integer :city_id
       t.string :name
-      t.float :coast, :limit => '7,2'
+      t.float :cost
       t.text :description
 
       t.timestamps

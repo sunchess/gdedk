@@ -14,15 +14,17 @@
 ActiveRecord::Schema.define(:version => 20120212162938) do
 
   create_table "cities", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string "name"
   end
 
   create_table "purchases", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "city_id"
     t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.float    "cost"
+    t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "users", :force => true do |t|
@@ -49,5 +51,7 @@ ActiveRecord::Schema.define(:version => 20120212162938) do
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
   end
+
+  add_index "users", ["city_id"], :name => "index_users_on_city_id"
 
 end
