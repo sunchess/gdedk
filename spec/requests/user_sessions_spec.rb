@@ -4,7 +4,7 @@ describe "user login" do
   describe "should have inputs fields" do
 
       it "login or email" do
-        visit "/user_session/new"
+        visit "/user_sessions/new"
 
       end
 

@@ -1,10 +1,3 @@
-class UsersController < ApplicationController
-  def edit
-  end
-
-  def new
-  end
-
-  def show
-  end
+class UsersController < InheritedResources::Base
+  respond_to :html, :xml, :json
 end

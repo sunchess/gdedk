@@ -2,5 +2,10 @@ ru:
   sing_in: "Войти"
   register: "Регистрация"
   add_product: "Добавить покупку"
+  as_site: "На сайте"
+  as_fb: "Facebook"
+  as_twetter: "Twetter"
+  as_google: "Google"
+  as_vk: "Вконтакте"
 
 

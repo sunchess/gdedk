@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.2'
+gem 'rails', '3.2.5'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -9,9 +9,11 @@ gem 'rails', '3.2.2'
 gem 'pg'
 
 #authlogic
-gem 'authlogic'
+#gem 'authlogic'
+gem 'authlogic' '~> 3.1.2'#, :git => 'git://github.com/binarylogic/authlogic.git'#, :ref => '0297e1c005c626c1e37b'
 gem 'cancan'
 gem 'inherited_resources'
+gem 'russian'
 
 
 # Gems used only for assets and not required
@@ -74,6 +76,7 @@ group :development do
   gem 'linecache19', :git => 'git://github.com/mark-moseley/linecache'
   gem 'ruby-debug-base19x', '~> 0.11.30.pre4'
   gem 'ruby-debug19'
+  gem 'thin'
 end
 
 

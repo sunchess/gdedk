@@ -1,5 +1,8 @@
 require 'spec_helper'
 
 describe User do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it "class should have method find_by_login_and_email" do
+    User.methods.include?( :find_by_login_and_email ).should == true
+  end
 end
+
